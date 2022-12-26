@@ -21,146 +21,148 @@
 
 /*
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ § │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ + │ ´ │       │
+ * │ ' │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ [ │ ] │       │
  * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ Å │ ¨ │     │
+ * │     │ Å │ , │ . │ P │ Y │ F │ G │ C │ R │ L │ / │ = │     │
  * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │ A │ S │ D │ F │ G │ H │ J │ K │ L │ Ö │ Ä │ ' │    │
+ * │      │ A │ O │ E │ U │ I │ D │ H │ T │ N │ S │ - │ : │    │
  * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ < │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ - │          │
+ * │    │ Ö │ Ä │ Q │ J │ K │ X │ B │ M │ W │ V │ Z │          │
  * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
+
+
 // Row 1
-#define SE_SECT GRAVE  // §
-#define SE_1    N1    // 1
-#define SE_2    N2    // 2
-#define SE_3    N3    // 3
-#define SE_4    N4    // 4
-#define SE_5    N5    // 5
-#define SE_6    N6    // 6
-#define SE_7    N7    // 7
-#define SE_8    N8    // 8
-#define SE_9    N9    // 9
-#define SE_0    N0    // 0
-#define SE_PLUS MINUS // +
-#define SE_ACUT EQUAL  // ´ (dead)
+#define SVD_SQT GRAVE  // '
+#define SVD_1    N1    // 1
+#define SVD_2    N2    // 2
+#define SVD_3    N3    // 3
+#define SVD_4    N4    // 4
+#define SVD_5    N5    // 5
+#define SVD_6    N6    // 6
+#define SVD_7    N7    // 7
+#define SVD_8    N8    // 8
+#define SVD_9    N9    // 9
+#define SVD_0    N0    // 0
+#define SVD_LBKT MINUS // [
+#define SVD_RBKT EQUAL // ]
 
 // Row 2
-#define SE_Q    Q    // Q
-#define SE_W    W    // W
-#define SE_E    E    // E
-#define SE_R    R    // R
-#define SE_T    T    // T
-#define SE_Y    Y    // Y
-#define SE_U    U    // U
-#define SE_I    I    // I
-#define SE_O    O    // O
-#define SE_P    P    // P
-#define SE_ARNG LBKT // Å
-#define SE_AA   SE_ARNG
-#define SE_DIAE RBKT // ¨ (dead)
+#define SVD_ARING Q   // Å
+#define SVD_COMM W    // ,
+#define SVD_DOT  E    // .
+#define SVD_P    R    // P
+#define SVD_Y    T    // Y
+#define SVD_F    Y    // F
+#define SVD_G    U    // G
+#define SVD_C    I    // C
+#define SVD_R    O    // R
+#define SVD_L    P    // L
+#define SVD_FSLH LBKT // /
+#define SVD_EQUAL RBKT // =
 
 // Row 3
-#define SE_A    A    // A
-#define SE_S    S    // S
-#define SE_D    D    // D
-#define SE_F    F    // F
-#define SE_G    G    // G
-#define SE_H    H    // H
-#define SE_J    J    // J
-#define SE_K    K    // K
-#define SE_L    L    // L
-#define SE_ODIA SEMI // Ö
-#define SE_OE   SE_ODIA
-#define SE_ADIA SQT // Ä
-#define SE_AE   SE_ADIA
-#define SE_QUOT NON_US_HASH // '
+#define SVD_A    A    // A
+#define SVD_O    S    // O
+#define SVD_E    D    // E
+#define SVD_U    F    // U
+#define SVD_I    G    // I
+#define SVD_D    H    // D
+#define SVD_H    J    // H
+#define SVD_T    K    // T
+#define SVD_N    L    // N
+#define SVD_S    SEMI // S
+#define SVD_MINUS SQT // -
+#define SVD_SEMI NON_US_HASH // ;
 
 // Row 4
-#define SE_LABK NON_US_BACKSLASH // <
-#define SE_Z    Z    // Z
-#define SE_X    X    // X
-#define SE_C    C    // C
-#define SE_V    V    // V
-#define SE_B    B    // B
-#define SE_N    N    // N
-#define SE_M    M    // M
-#define SE_COMM COMMA // ,
-#define SE_DOT  DOT  // .
-#define SE_MINS SLASH // -
-
+#define SVD_ODIA NON_US_BACKSLASH // Ö
+#define SVD_ADIA Z    // Ä
+#define SVD_Q    X    // Q
+#define SVD_J    C    // J
+#define SVD_K    V    // K
+#define SVD_X    B    // X
+#define SVD_B    N    // B
+#define SVD_M    M    // M
+#define SVD_W   COMMA // W
+#define SVD_V   DOT   // V
+#define SVD_Z   SLASH // Z
 
 
 /* Shifted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ ½ │ ! │ " │ # │ ¤ │ % │ & │ / │ ( │ ) │ = │ ? │ ` │       │
+ * │ ~ │ ! │ " │ # │ $ │ % │ ^ │ & │ * │ ( │ ) │ { │ } │       │
  * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │   │   │   │   │   │   │   │   │   │   │   │ ^ │     │
+ * │     │   │ < │ > │   │   │   │   │   │   │   │ ? │ + │     │
  * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │   │   │ * │    │
+ * │      │   │   │   │   │   │   │   │   │   │   │ _ │ : │    │
  * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ > │   │   │   │   │   │   │   │ ; │ : │ _ │          │
+ * │    │   │   │   │   │   │   │   │   │   │   │   │          │
  * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define SE_HALF LS(SE_SECT) // ½
-#define SE_EXLM LS(SE_1)    // !
-#define SE_DQUO LS(SE_2)    // "
-#define SE_HASH LS(SE_3)    // #
-#define SE_CURR LS(SE_4)    // ¤
-#define SE_PERC LS(SE_5)    // %
-#define SE_AMPR LS(SE_6)    // &
-#define SE_SLSH LS(SE_7)    // /
-#define SE_LPRN LS(SE_8)    // (
-#define SE_RPRN LS(SE_9)    // )
-#define SE_EQL  LS(SE_0)    // =
-#define SE_QUES LS(SE_PLUS) // ?
-#define SE_GRV  LS(SE_ACUT) // ` (dead)
+#define SVD_TILD LS(SVD_SQT)  // ~
+#define SVD_EXLM LS(SVD_1)    // !
+#define SVD_DQUO LS(SVD_2)    // "
+#define SVD_HASH LS(SVD_3)    // #
+#define SVD_CURR LS(SVD_4)    // $
+#define SVD_PERC LS(SVD_5)    // %
+#define SVD_CIRC LS(SVD_6)    // ^
+#define SVD_AMPR LS(SVD_7)    // &
+#define SVD_ASTR LS(SVD_8)    // *
+#define SVD_LPRN LS(SVD_9)    // (
+#define SVD_RPRN LS(SVD_0)    // )
+#define SVD_LBRC LS(SVD_LBKT)// {
+#define SVD_RBRC LS(SVD_RBKT)// }
 
 
 // Row 2
-#define SE_CIRC LS(SE_DIAE) // ^ (dead)
+#define SVD_LESS LS(SVD_COMM)  // <
+#define SVD_GREATER LS(SVD_DOT)// >
+#define SVD_QMARK LS(SVD_FSLH) // ?
+#define SVD_PLUS LS(SVD_EQUAL) // +
 // Row 3
-#define SE_ASTR LS(SE_QUOT) // *
-// Row 4
-#define SE_RABK LS(SE_LABK) // >
-#define SE_SCLN LS(SE_COMM) // ;
-#define SE_COLN LS(SE_DOT)  // :
-#define SE_UNDS LS(SE_MINS) // _
+#define SVD_UNDER LS(SVD_MINUS) // :
+#define SVD_COLON LS(SVD_SEMI) // :
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │   │   │ @ │ £ │ $ │ € │   │ { │ [ │ ] │ } │ \ │   │       │
+ * │ ◌̀ │   │ @ │   │   │ € │ ◌̂ │   │   │ ◌̆ │ ◌̊ │   │ ◌̃ │       │
  * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │   │   │   │   │   │   │   │   │   │   │   │ ~ │     │
+ * │     │ ◌́ │ ◌̧ │ ◌̇ │   │   │   │   │   │   │   │ ◌̡ │ ◌̋ │     │
  * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │   │   │   │   │   │   │   │   │   │   │    │
+ * │      │   │   │ € │   │   │   │   │   │   │ ß │ | │ \ │    │
  * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ | │   │   │   │   │   │   │ µ │   │   │   │          │
+ * │    │ ◌̈ │ ◌̀ │   │   │   │   │   │ µ │   │   │   │          │
  * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define SE_AT   RA(SE_2)    // @
-#define SE_PND  RA(SE_3)    // £
-#define SE_DLR  RA(SE_4)    // $
-#define SE_EURO RA(SE_5)    // €
-#define SE_LCBR RA(SE_7)    // { win
-//#define SE_LCBR LS(RA(SE_8))    // { mac
-#define SE_LBRC RA(SE_8)    // [
-#define SE_RBRC RA(SE_9)    // ]
-#define SE_RCBR RA(SE_0)    // } win
-//#define SE_RCBR LS(RA(SE_9))    // } mac
-#define SE_BSLS RA(SE_PLUS) // (backslash) win
-//#define SE_BSLS LS(RA(SE_7)) // (backslash) mac
+#define SVD_GRAVE RA(SVD_SQT)    // ` (Grave)
+#define SVD_AT   RA(SVD_2)      // @
+#define SVD_EURO RA(SVD_5)      // €
+#define SVD_CIRC_D RA(SVD_6)    // ◌̂^ (dead) (Circumflex)
+#define SVD_BREVE_D RA(SVD_9)   // ◌̆  (dead) (Breve)
+#define SVD_ARING_D RA(SVD_0)   // ◌̊  (dead) (Above Ring)
+#define SVD_TILD_D RA(SVD_RBKT) // ◌̃  (dead) (Tilde)
 // Row 2
-#define SE_TILD RA(SE_DIAE) // ~ (dead)
+#define SVD_ACUT_D RA(SVD_ARING) // ◌́  (dead) (Acute)
+#define SVD_CEDI_D RA(SVD_COMM) // ◌̧  (dead) (Cedilla)
+#define SVD_ADOT_D RA(SVD_DOT) // ◌̇  (dead) (Above Dot)
+#define SVD_HOOK_D RA(SVD_FSLH) // ◌̡ (dead) (Hook)
+#define SVD_DACUTE_D RA(SVD_EQUAL) // ◌̋  (dead) (Double Acute)
+// Row 3
+#define SVD_EURO2 RA(SVD_E) // €
+#define SVD_SSHARP RA(SVD_S) // ß
+#define SVD_BAR RA(SVD_MINUS) // | (Bar)
+#define SVD_BSLH RA(SVD_SEMI) // \ (Backslash)
+
 // Row 4
-#define SE_PIPE RA(SE_LABK) // | win
-//#define SE_PIPE RA(SE_7) // | mac
-#define SE_MICR RA(SE_M)    // µ
+#define SVD_DIAR_D RA(SVD_ODIA) // ◌̈  (dead) (Diaresis)
+#define SVD_GRAVE_D RA(SVD_ADIA) // ◌̀  (dead) (Grave)
+#define SVD_MICR RA(SVD_M)    // µ
