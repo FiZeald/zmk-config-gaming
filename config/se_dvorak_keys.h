@@ -126,7 +126,7 @@
 #define SVD_QMARK LS(SVD_FSLH) // ?
 #define SVD_PLUS LS(SVD_EQUAL) // +
 // Row 3
-#define SVD_UNDER LS(SVD_MINUS) // :
+#define SVD_UNDER LS(SVD_MINUS) // _
 #define SVD_COLON LS(SVD_SEMI) // :
 
 /* AltGr symbols
