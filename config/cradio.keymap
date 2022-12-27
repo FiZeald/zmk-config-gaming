@@ -73,8 +73,8 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  )       │  ]       │  }       │  @       │   │  ^       │  /       │  (       │  [       │  {       │
-       &kp SVD_TILD   &kp RPRN &kp SVD_RBKT &kp SVD_RBRC &kp SVD_AT &kp SVD_CIRC &kp SVD_FSLH &kp SVD_LPRN &kp SVD_LBKT &kp SVD_LBRC
+        //│  ' ~ `   │  )       │  ]       │  }       │  @       │   │  ^       │  /       │  (       │  [       │  {       │
+       &kp SVD_SQT   &kp RPAR &kp SVD_RBKT &kp SVD_RBRC &kp SVD_AT &kp SVD_CIRC &kp SVD_FSLH &kp SVD_LPRN &kp SVD_LBKT &kp SVD_LBRC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  "       │  #       │  $       │  %       │   │  *       │  -       │  =       │  |       │  \       │
       &kp SVD_EXLM &kp SVD_DQUO &kp SVD_HASH &kp SVD_CURR &kp SVD_PERC &kp SVD_ASTR &kp SVD_MINUS &kp SVD_EQUAL &kp SVD_BAR  &kp SVD_BSLH
