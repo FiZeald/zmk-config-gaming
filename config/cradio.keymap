@@ -153,8 +153,8 @@
         //│          │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │          │
            &trans   &kp SVD_LESS &kp SVD_CURR &kp SVD_GREATER &trans &trans &kp SVD_LBRC &kp SVD_UNDER &kp SVD_RBRC &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  -       │  (       │  "       │  )       │  #       │   │  &       │  {       │  =       │  }       │  |       │
-      &kp SVD_MINUS &kp SVD_LPRN &kp SVD_DQUO &kp SVD_RPRN &kp SVD_HASH &kp SVD_AMPR &kp SVD_LBRC &kp SVD_EQUAL &kp SVD_RBRC &kp SVD_BAR
+        //│  =       │  (       │  "       │  )       │  #       │   │  &       │  {       │  -       │  }       │  |       │
+      &kp SVD_EQUAL &kp SVD_LPRN &kp SVD_DQUO &kp SVD_RPRN &kp SVD_HASH &kp SVD_AMPR &kp SVD_LBRC &kp SVD_MINUS &kp SVD_RBRC &kp SVD_BAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  +       │  *       │  :       │  ' ~ `   │   │  %       │  /       │  ^       │  \       │          │
           &trans  &kp SVD_PLUS &kp SVD_ASTR &kp SVD_COLON &kp SVD_SQT &kp SVD_PERC &kp SVD_FSLH &kp SVD_CIRC &kp SVD_BSLH &trans
