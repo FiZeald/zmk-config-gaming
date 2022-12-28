@@ -151,7 +151,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │          │
-           &trans   &kp SVD_LESS &kp SVD_CURR &kp SVD_GREATER &trans &trans &kp SVD_LBRC &kp SVD_UNDER &kp SVD_RBRC &trans
+           &trans   &kp SVD_LESS &kp SVD_CURR &kp SVD_GREATER &trans &trans &kp SVD_LBKT &kp SVD_UNDER &kp SVD_RBKT &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  =       │  (       │  "       │  )       │  #       │   │  &       │  {       │  -       │  }       │  |       │
       &kp SVD_EQUAL &kp SVD_LPRN &kp SVD_DQUO &kp SVD_RPRN &kp SVD_HASH &kp SVD_AMPR &kp SVD_LBRC &kp SVD_MINUS &kp SVD_RBRC &kp SVD_BAR
@@ -167,14 +167,14 @@
         function_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  F1      │  F2      │  F3      │          │   │          │ BL-      │ Vol Up   │ BL+      │          │
-            &kp INS     &F1        &F2        &F3      &trans         &trans &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_DN &trans
+        //│ INSERT   │  F1      │  F2      │  F3      │ F11      │   │          │ BL-      │ Vol Up   │ BL+      │          │
+            &kp INS     &kp F1    &kp F2    &kp F3      &kp F11        &trans &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  F0      │  F4      │  F5      │  6       │          │   │          │  C_Prev  │ Vol Down │ C_Next   │          │
-             &F0        &F4        &F5      &kp N6     &trans          &trans  &kp C_PREV    &kp DOWN   &kp C_NEXT &trans
+        //│  F10     │  F4      │  F5      │  F6      │ F12      │   │          │  C_Prev  │ Vol Down │ C_Next   │          │
+             &kp F10  &kp F4     &kp F5     &kp F6     &kp F12         &trans  &kp C_PREV  &kp C_VOL_DN &kp C_NEXT &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  7       │  8       │  9       │          │   │          │ Toggle F │Play/Pause│  Mute    │          │
-             &trans   &kp N7     &kp N8     &kp N9     &trans          &trans     &tog LFUNC  &C_PP      &kp C_MUTE &trans
+        //│          │ F7       │ F8       │ F9       │          │   │          │ Toggle F │Play/Pause│  Mute    │          │
+             &trans   &kp F7     &kp F8     &kp F9     &trans          &trans     &tog LFUNC  &kp C_PP  &kp C_MUTE &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
