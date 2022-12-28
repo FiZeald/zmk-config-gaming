@@ -12,6 +12,12 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht LALT k3  &ht RSHFT k4
 
+#define DEFAULT 0
+#define LEFT    1
+#define RIGHT   2
+#define FUNC    3
+#define MGMT    4
+
 &caps_word {
     continue-list = <SVD_UNDER SVD_MINUS>;
 };
@@ -91,9 +97,9 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+        mgmt_layer {
+            if-layers = <LEFT RIGHT>;
+            then-layer = <MGMT>;
         };
     };
 
@@ -125,8 +131,8 @@
         //│  0  A    │  4  E    │  5  F    │  6       │ DELETE   │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
             &hex0      &hex4      &hex5      &kp N6     &kp DEL        &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │          │          │          │ CAPS_WORD│
-        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &trans     &trans     &trans     &caps_word
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │          │          │ CAPS_WORD│
+        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &tog FUNC &trans     &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -150,7 +156,24 @@
             >;
         };
 
-        tri_layer {
+        function_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ INSERT   │  F1      │  F2      │  F3      │          │   │          │ BL-      │ Vol Up   │ BL+      │          │
+            &kp INS     &F1        &F2        &F3      &trans         &trans &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_DN &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  F0      │  F4      │  F5      │  6       │          │   │          │  C_Prev  │ Vol Down │ C_Next   │          │
+             &F0        &F4        &F5      &kp N6     &trans          &trans  &kp C_PREV    &kp DOWN   &kp C_NEXT &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  7       │  8       │  9       │          │   │          │ Toggle F │Play/Pause│  Mute    │          │
+             &trans   &kp N7     &kp N8     &kp N9     &trans          &trans     &tog FUNC  &C_PP      &kp C_MUTE     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        mgmt_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
