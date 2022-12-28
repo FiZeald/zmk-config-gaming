@@ -117,7 +117,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ` ESC   │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
-           &kp gresc &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
+           &gresc &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
            HRML(SVD_A, SVD_O,     SVD_E,     SVD_U)    &kp SVD_I      &kp SVD_D  HRMR(SVD_H, SVD_T,     SVD_N,     SVD_S)
