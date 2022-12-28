@@ -35,6 +35,13 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GRAVE_ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp SVD_GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
         // Make LS(,) RS(,) output ! instead of <
         shiftless: shiftless {
             compatible = "zmk,behavior-mod-morph";
@@ -109,8 +116,8 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Å       │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
-      &kp SVD_ARING &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
+        //│  ` ESC   │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
+           &kp gresc &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
            HRML(SVD_A, SVD_O,     SVD_E,     SVD_U)    &kp SVD_I      &kp SVD_D  HRMR(SVD_H, SVD_T,     SVD_N,     SVD_S)
@@ -126,14 +133,14 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1  B    │  2  C    │  3  D    │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-            &kp INS    &hex1      &hex2      &hex3      &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
+        //│ Å        │  1  B    │  2  C    │  3  D    │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
+      &kp SVD_ARING    &hex1      &hex2      &hex3      &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  4  E    │  5  F    │  6       │ DELETE   │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
             &hex0      &hex4      &hex5      &kp N6     &kp DEL        &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │          │          │ CAPS_WORD│
-        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &tog LFUNC &trans     &trans     &caps_word
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │ DELETE   │ CAPS_WORD│
+        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &tog LFUNC &kp INS    &kp DEL   &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
