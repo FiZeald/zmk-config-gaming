@@ -13,14 +13,6 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht LALT k3  &ht RSHFT k4
 
 / {
-    chosen {
-      zmk,battery = &vbatt;
-    };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-        label = "VBATT";
-    };
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
