@@ -13,6 +13,14 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht LALT k3  &ht RSHFT k4
 
 / {
+    chosen {
+      zmk,battery = &vbatt;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+        label = "VBATT";
+    };
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -72,8 +80,8 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  ?       │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp SVD_QMARK
+        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          │
+            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ; :     │
             &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT   &kp SVD_SEMI
