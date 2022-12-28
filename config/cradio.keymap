@@ -121,8 +121,8 @@
         //│  0  A    │  4  E    │  5  F    │  6       │ DELETE   │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
             &hex0      &hex4      &hex5      &kp N6     &kp DEL        &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │          │          │          │          │
-        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &trans     &trans     &trans     &trans
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │          │          │          │ CAPS_WORD│
+        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &trans     &trans     &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
