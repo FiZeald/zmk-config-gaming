@@ -32,7 +32,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
+            quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -134,7 +134,7 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ Å        │  4  E    │  5  F    │  6  F    │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
+        //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
       &kp SVD_ARING    &hex4      &hex5      &kp N6     &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
