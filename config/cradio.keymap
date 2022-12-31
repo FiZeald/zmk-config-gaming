@@ -18,6 +18,7 @@
 #define LRIGHT   2
 #define LFUNC    3
 #define LMGMT    4
+#define LSPECIAL 5
 
 &caps_word {
     continue-list = <SVD_UNDER SVD_MINUS, LSHIFT, RSHIFT, LALT, RALT, LCTRL, RCTRL, LGUI, RGUI>;
@@ -192,6 +193,23 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │ BT/USB   │ EXT_PWR  │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &out OUT_TOG &ext_power EP_TOG &trans &trans &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        special_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ´ (Dead) │ ç        │ ˙ (Dead) │ ¨ (Dead) │ ü        │   │ «        │ »        │ ©        │ ®        │  ø       │
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ á        │ ó        │ é        │ ú        │ í        │   │ ð        │ `        │ þ        │ ñ        │  ß       │
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ ` (Dead) │ ½        │ ¾        │ œ        │  ◌̂       │   │ ¤        │ µ        │ ‘        │ ’        │  æ       │
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
