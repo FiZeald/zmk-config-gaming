@@ -136,11 +136,11 @@
         //│ Å        │  4  E    │  5  F    │  6  F    │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
       &kp SVD_ARING    &hex4      &hex5      &kp N6     &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  0  A    │  1  B    │  2  C    │  3  D    │ DELETE   │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-            &hex0      &hex1      &hex2      &hex3      &kp DEL        &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
+        //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
+            &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │ DELETE   │ CAPS_WORD│
-        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9    &sk RALT        &trans     &tog LFUNC &kp INS    &kp DEL   &caps_word
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
+        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       &trans     &tog LFUNC &kp INS    &trans    &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -187,8 +187,8 @@
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
             &reset     &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans      &reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │ DELETE   │          │          │BOOTLOADER│
+          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp DEL    &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │ BT/USB   │ EXT_PWR  │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &out OUT_TOG &ext_power EP_TOG &trans &trans &trans
