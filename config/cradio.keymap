@@ -116,7 +116,7 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ` ESC   │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
+        //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
            &gresc &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
@@ -150,14 +150,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │          │
+        //│  ~       │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │          │
       &kp SVD_TILD &kp SVD_LESS &kp SVD_CURR &kp SVD_GREATER &trans &trans &kp SVD_LBKT &kp SVD_UNDER &kp SVD_RBKT &kp SVD_BAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  =       │  (       │  "       │  )       │  #       │   │  &       │  {       │  -       │  }       │  |       │
       &kp SVD_EQUAL &kp SVD_LPRN &kp SVD_DQUO &kp SVD_RPRN &kp SVD_HASH &kp SVD_AMPR &kp SVD_LBRC &kp SVD_MINUS &kp SVD_RBRC &kp SVD_SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  +       │  *       │  :       │  ' ~ `   │   │  %       │  /       │  ^       │  \       │          │
-          &trans  &kp SVD_PLUS &kp SVD_ASTR &kp SVD_COLON &kp SVD_SQT &kp SVD_PERC &kp SVD_FSLH &kp SVD_CIRC &kp SVD_BSLH &trans
+        //│          │  +       │  *       │  :       │  '       │   │  %       │  /       │  ^       │  \       │  @       │
+          &trans  &kp SVD_PLUS &kp SVD_ASTR &kp SVD_COLON &kp SVD_SQT &kp SVD_PERC &kp SVD_FSLH &kp SVD_CIRC &kp SVD_BSLH &kp SVD_AT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
