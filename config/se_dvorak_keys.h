@@ -131,38 +131,66 @@
 
 /* AltGr symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
- * │ ◌̀ │   │ @ │   │   │ € │ ◌̂ │   │   │ ◌̆ │ ◌̊ │   │ ◌̃ │       │
+ * │ ` │ ¡ │ @ │ ³ │ ¤ │ € │ ◌̂ │ ½ │ ¾ │ ‘ │ ’ │ « │ » │       │
  * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
- * │     │ ◌́ │ ◌̧ │ ◌̇ │   │   │   │   │   │   │   │ ◌̡ │ ◌̋ │     │
+ * │     │ ◌́ │ ç │ ◌̇ │ ö │ ü │ f │ g │ © │ ® │ ø │ ¿ │ = │     │
  * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
- * │      │   │   │ € │   │   │   │   │   │   │ ß │ | │ \ │    │
+ * │      │ á │ ó │ é │ ú │ í │ ð │ h │ þ │ ñ │ ß │ | │ \ │    │
  * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
- * │    │ ◌̈ │ ◌̀ │   │   │   │   │   │ µ │   │   │   │          │
+ * │    │ ◌̈ │ ◌̀ │ ä │ j │ œ │ x │ b │ µ │ å │ v │ æ │          │
  * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
  * │    │    │    │                        │    │    │    │    │
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
 #define SVD_GRAVE RA(SVD_SQT)    // ` (Grave)
-#define SVD_AT   RA(SVD_2)      // @
-#define SVD_EURO RA(SVD_5)      // €
-#define SVD_CIRC_D RA(SVD_6)    // ◌̂^ (dead) (Circumflex)
-#define SVD_BREVE_D RA(SVD_9)   // ◌̆  (dead) (Breve)
-#define SVD_ARING_D RA(SVD_0)   // ◌̊  (dead) (Above Ring)
-#define SVD_TILD_D RA(SVD_RBKT) // ◌̃  (dead) (Tilde)
+#define SVD_EXLM_INV RA(SVD_1)   // ¡
+#define SVD_AT   RA(SVD_2)       // @
+#define SVD_CUBED RA(SVD_3)      // ³
+#define SVD_CURR_ANY RA(SVD_4)   // ¤
+#define SVD_EURO RA(SVD_5)       // €
+#define SVD_CIRC_D RA(SVD_6)     // ◌̂^ (dead) (Circumflex)
+#define SVD_ONE_HALF RA(SVD_7)   // ½
+#define SVD_THREE_QUARTERS RA(SVD_8) // ¾
+#define SVD_SQTL RA(SVD_9)       // ‘ (Single Quote Left)
+#define SVD_SQTR RA(SVD_0)       // ’ (Single Quote Right)
+#define SVD_GUILLEMOTL RA(SVD_LBKT) // « (Guillemot)
+#define SVD_GUILLEMOTR RA(SVD_RBKT) // » (Guillemot)
 // Row 2
 #define SVD_ACUT_D RA(SVD_ARING) // ◌́  (dead) (Acute)
-#define SVD_CEDI_D RA(SVD_COMM) // ◌̧  (dead) (Cedilla)
-#define SVD_ADOT_D RA(SVD_DOT) // ◌̇  (dead) (Above Dot)
-#define SVD_HOOK_D RA(SVD_FSLH) // ◌̡ (dead) (Hook)
-#define SVD_DACUTE_D RA(SVD_EQUAL) // ◌̋  (dead) (Double Acute)
+#define SVD_CCEDI RA(SVD_COMM)   // ç (C Cedilla)
+#define SVD_ADOT_D RA(SVD_DOT)   // ◌̇  (dead) (Above Dot)
+#define SVD_ODIA2 RA(SVD_P)      // ö
+#define SVD_UDIA RA(SVD_Y)       // ü
+// #define SVD_ RA(SVD_F)        // Plain F
+// #define SVD_ RA(SVD_G)        // Plain G
+#define SVD_COPYR RA(SVD_C)      // © (Copyright)
+#define SVD_REG_TM RA(SVD_R)     // ® (Registered Trademark)
+#define SVD_SLASHED_O RA(SVD_L)  // ø (O with slash)
+#define SVD_QMARK_INV RA(SVD_FSLH) // ¿
+// #define SVD_ RA(SVD_EQUAL) // Plain =
 // Row 3
-#define SVD_EURO2 RA(SVD_E) // €
-#define SVD_SSHARP RA(SVD_S) // ß
-#define SVD_BAR RA(SVD_MINUS) // | (Bar)
-#define SVD_BSLH RA(SVD_SEMI) // \ (Backslash)
-
+#define SVD_AACUTE RA(SVD_A)     // á (A acute)
+#define SVD_OACUTE RA(SVD_O)     // ó (O acute)
+#define SVD_EACUTE RA(SVD_E)     // é (E acute)
+#define SVD_UACUTE RA(SVD_U)     // ú (U acute)
+#define SVD_IACUTE RA(SVD_I)     // í (I acute)
+#define SVD_ETH RA(SVD_D)        // ð (Eth) 
+// #define SVD_ RA(SVD_H)        // Plain H
+#define SVD_THORN RA(SVD_T)      // þ (Thorn)
+#define SVD_NTILDE RA(SVD_N)     // ñ (Tilde over N, Virgulilla)
+#define SVD_SSHARP RA(SVD_S)     // ß (Eszett, sharp S)
+#define SVD_BAR RA(SVD_MINUS)    // | (Bar)
+#define SVD_BSLH RA(SVD_SEMI)    // \ (Backslash)
 // Row 4
-#define SVD_DIAR_D RA(SVD_ODIA) // ◌̈  (dead) (Diaresis)
+#define SVD_DIAR_D RA(SVD_ODIA)  // ◌̈  (dead) (Diaresis)
 #define SVD_GRAVE_D RA(SVD_ADIA) // ◌̀  (dead) (Grave)
-#define SVD_MICR RA(SVD_M)    // µ
+// #define SVD_ RA(SVD_Q)        // Plain Ä
+// #define SVD_ RA(SVD_J)        // Plain J
+#define SVD_ETHEL RA(SVD_K)      // œ (Ethel) 
+// #define SVD_ RA(SVD_X)        // Plain X
+// #define SVD_ RA(SVD_B)        // Plain B
+#define SVD_MICR RA(SVD_M)       // µ (Mu)
+// #define SVD_ RA(SVD_W)        // Moved Å
+// #define SVD_ RA(SVD_V)        // Plain V
+#define SVD_ASH RA(SVD_Z)        // æ (Ash) 
