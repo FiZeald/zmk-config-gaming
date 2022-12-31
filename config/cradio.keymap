@@ -20,7 +20,7 @@
 #define LMGMT    4
 
 &caps_word {
-    continue-list = <SVD_UNDER SVD_MINUS>;
+    continue-list = <SVD_UNDER SVD_MINUS, LSHIFT, RSHIFT, LALT, RALT, LCTRL, RCTRL, LGUI, RGUI>;
 };
 
 / {
