@@ -14,8 +14,8 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht LALT k3  &ht RSHFT k4
 
 #define LDEFAULT 0
-#define LLEFT    1
-#define LRIGHT   2
+#define LRIGHT   1
+#define LLEFT    2
 #define LFUNC    3
 #define LMGMT    4
 #define LSPECIAL 5
@@ -126,7 +126,7 @@
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
          &kp SVD_ADIA &kp SVD_Q  &kp SVD_J &kp SVD_K   &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                        &lt LLEFT TAB &kp ENTER     &kp SPACE  &lt LRIGHT BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
