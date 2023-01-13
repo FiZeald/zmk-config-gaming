@@ -9,9 +9,9 @@
 
 #include "se_dvorak_keys.h"
 
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht LALT k3  &ht RSHFT k4
+// Home row mods macro (GASC)
+#define HRML(k1,k2,k3,k4)   &ht LGUI k1  &ht LALT k2   &ht LSHFT k3 &ht LCTRL k4
+#define HRMR(k1,k2,k3,k4)   &ht RCTRL k1 &ht RSHFT k2  &ht LALT k3  &ht RGUI k4
 
 #define LDEFAULT 0
 #define LRIGHT   1
