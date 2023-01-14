@@ -20,8 +20,13 @@
 #define LMGMT    4
 #define LSPECIAL 5
 
+// Letters that gets translated to some non-alphabet key breaks caps word,
+// ABCDEFGHIJKLMNOPQRsTvwXYzÅÄö
+// Adding special handling for s, v, w, z and ö
+// their mapping is SEMI DOT COMMA SLASH NON_US_BACKSLASH
+
 &caps_word {
-    continue-list = <SVD_UNDER SVD_MINUS LSHFT RSHFT LALT RALT LCTRL RCTRL LGUI RGUI>;
+    continue-list = <SVD_UNDER SVD_MINUS LSFT RSHFT LALT RALT LCTRL RCTRL LGUI RGUI SEMI DOT COMMA SLASH NON_US_BACKSLASH>;
 };
 
 / {
