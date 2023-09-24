@@ -183,7 +183,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │   F4     │  F5      │  F6      │ F11      │   │          │ BL-      │ Vol Up   │ BL+      │          │
-            &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &trans
+            &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp LGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F10     │   F1     │  F2      │  F3      │ F12      │   │          │  C_Prev  │ Vol Down │ C_Next   │  CTRL    │
              &kp F10   &kp F1     &kp F2     &kp F3     &kp F12        &trans  &kp C_PREV   &kp C_VOL_DN &kp C_NEXT &kp LCTRL
