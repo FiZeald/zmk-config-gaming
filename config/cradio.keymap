@@ -186,7 +186,7 @@
             &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp LGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F10     │   F1     │  F2      │  F3      │ F12      │   │          │  C_Prev  │ Vol Down │ C_Next   │  CTRL    │
-             &kp F10   &kp F1     &kp F2     &kp F3     &kp F12        &trans  &kp C_PREV   &kp C_VOL_DN &kp C_NEXT &kp LCTRL
+             &kp F10   &kp F1     &kp F2     &kp F3     &kp F12     &kp LSHIFT &kp C_PREV   &kp C_VOL_DN &kp C_NEXT &kp LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │ F7       │ F8       │ F9       │          │   │          │ Toggle F │Play/Pause│  Mute    │  Alt     │
              &trans    &kp F7     &kp F8     &kp F9     &trans          &trans     &tog LFUNC  &kp C_PP  &kp C_MUTE &kp LALT
