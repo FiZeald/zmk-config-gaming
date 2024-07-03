@@ -32,7 +32,6 @@
 / {
     behaviors {
         ht: hold_tap {
-            label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -43,7 +42,6 @@
         };
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
-            label = "GRAVE_ESCAPE";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp SVD_GRAVE>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
@@ -51,7 +49,6 @@
         // Make LS(,) RS(,) output ! instead of <
         shiftless: shiftless {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_LESS";
             #binding-cells = <0>;
             bindings = <&kp SVD_COMM>, <&kp SVD_EXLM>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -59,7 +56,6 @@
         // Make LS(,) RS(,) output ? instead of >
         shiftgreater: shiftgreater {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_GREATER";
             #binding-cells = <0>;
             bindings = <&kp SVD_DOT>, <&kp SVD_QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -76,42 +72,36 @@
         // Make RS(0-5) output A-F
         hex0: hex0 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex0";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp SVD_A>;
             mods = <(MOD_RSFT)>;
         };
         hex1: hex1 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex1";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp SVD_B>;
             mods = <(MOD_RSFT)>;
         };
         hex2: hex2 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex2";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp SVD_C>;
             mods = <(MOD_RSFT)>;
         };
         hex3: hex3 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex3";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp SVD_D>;
             mods = <(MOD_RSFT)>;
         };
         hex4: hex4 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex4";
             #binding-cells = <0>;
             bindings = <&kp N4>, <&kp SVD_E>;
             mods = <(MOD_RSFT)>;
         };
         hex5: hex5 {
             compatible = "zmk,behavior-mod-morph";
-            label = "hex5";
             #binding-cells = <0>;
             bindings = <&kp N5>, <&kp SVD_F>;
             mods = <(MOD_RSFT)>;
