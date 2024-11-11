@@ -109,6 +109,7 @@
             key-positions = <33 34>;
             bindings = <&caps_word>;
         };
+        // Left hand mouse
         // Pressing both P and U gives LCLK
         combo_lclk {
             timeout-ms = <50>;
@@ -125,6 +126,25 @@
         combo_rclk {
             timeout-ms = <50>;
             key-positions = <1 11>;
+            bindings = <&mkp RCLK>;
+        };
+        // Right hand mouse
+        // Pressing both G and H gives LCLK
+        combo_lclk_r {
+            timeout-ms = <50>;
+            key-positions = <6 16>;
+            bindings = <&mkp LCLK>;
+        };
+        // Pressing both C and T gives MCLK
+        combo_mclk_r {
+            timeout-ms = <50>;
+            key-positions = <7 17>;
+            bindings = <&mkp MCLK>;
+        };
+        // Pressing both R and N gives RCLK
+        combo_rclk_r {
+            timeout-ms = <50>;
+            key-positions = <8 18>;
             bindings = <&mkp RCLK>;
         };
     };
