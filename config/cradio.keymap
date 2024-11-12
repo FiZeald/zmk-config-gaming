@@ -287,7 +287,7 @@
           &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT    &tog LDEFAULT &tog LFUNC &kp INS    &trans    &caps_word
+        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS    &trans    &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
