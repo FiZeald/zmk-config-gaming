@@ -44,6 +44,12 @@
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+        gresc_sv: grave_escape_sv {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp SVD_GRAVE>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
@@ -51,11 +57,23 @@
         shiftless: shiftless {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&kp COMM>, <&kp EXLM>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        shiftless_sv: shiftless_sv {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp SVD_COMM>, <&kp SVD_EXLM>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Make LS(,) RS(,) output ? instead of >
         shiftgreater: shiftgreater {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        shiftgreater_sv: shiftgreater_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SVD_DOT>, <&kp SVD_QMARK>;
@@ -66,10 +84,22 @@
         hex0: hex0 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp A>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex0_sv: hex0_sv {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp N0>, <&kp SVD_A>;
             mods = <(MOD_RSFT)>;
         };
         hex1: hex1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp B>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex1_sv: hex1_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp SVD_B>;
@@ -78,10 +108,22 @@
         hex2: hex2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp C>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex2_sv: hex2_sv {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp N2>, <&kp SVD_C>;
             mods = <(MOD_RSFT)>;
         };
         hex3: hex3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp D>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex3_sv: hex3_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp SVD_D>;
@@ -90,10 +132,22 @@
         hex4: hex4 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&kp N4>, <&kp E>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex4_sv: hex4_sv {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp N4>, <&kp SVD_E>;
             mods = <(MOD_RSFT)>;
         };
         hex5: hex5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp F>;
+            mods = <(MOD_RSFT)>;
+        };
+        hex5_sv: hex5_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N5>, <&kp SVD_F>;
@@ -163,7 +217,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
-           &gresc &shiftless &shiftgreater &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
+           &gresc_sv &shiftless_sv &shiftgreater_sv &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
            HRML(SVD_A, SVD_O,     SVD_E,     SVD_U)    &kp SVD_I      &kp SVD_D  HRMR(SVD_H, SVD_T,     SVD_N,     SVD_S)
@@ -183,7 +237,7 @@
        &kp SVD_ARNG  &hex4_sv   &hex5_sv   &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-            &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
+          &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
         &kp SVD_ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       &trans     &tog LFUNC &kp INS    &trans    &caps_word
