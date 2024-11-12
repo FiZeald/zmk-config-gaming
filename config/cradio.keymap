@@ -14,12 +14,20 @@
 #define HRML(k1,k2,k3,k4)   &ht LGUI k1  &ht LALT k2   &ht LSHFT k3 &ht LCTRL k4
 #define HRMR(k1,k2,k3,k4)   &ht RCTRL k1 &ht RSHFT k2  &ht LALT k3  &ht RGUI k4
 
-#define LDEFAULT 0
-#define LRIGHT   1
-#define LLEFT    2
-#define LFUNC    3
-#define LMGMT    4
-#define LSPECIAL 5
+#define LDEFAULT    0
+#define LDEFAULT_SV 1
+#define LRIGHT      2
+#define LRIGHT_SV   3
+#define LLEFT       4
+#define LLEFT_SV    5
+#define LFUNC       6
+#define LMGMT       7
+#define LSPECIAL    8
+
+
+#define ODIA RA(P)    // ö
+#define ADIA RA(Q)    // ä
+#define ARNG RA(W)    // å
 
 // Letters that gets translated to some non-alphabet key breaks caps word,
 // ABCDEFGHIJKLMNOPQRsTvwXYzÅÄö
@@ -57,7 +65,7 @@
         shiftless: shiftless {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMM>, <&kp EXLM>;
+            bindings = <&kp CMMA>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         shiftless_sv: shiftless_sv {
@@ -209,11 +217,32 @@
             if-layers = <LLEFT LRIGHT>;
             then-layer = <LMGMT>;
         };
+        mgmt_layer_sv {
+            if-layers = <LLEFT_SV LRIGHT_SV>;
+            then-layer = <LMGMT>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
+           &gresc &shiftless &shiftgreater &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
+          HRML(  A,      O,         E,         U)     &kp I          &kp D      HRMR( H,       T,         N,         S)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
+          &kp ADIA   &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M      &kp W      &kp V      &kp Z
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                        &lt LLEFT TAB &kp ENTER     &kp SPACE  &lt LRIGHT BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        sv {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
@@ -225,12 +254,30 @@
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
          &kp SVD_ADIA &kp SVD_Q  &kp SVD_J &kp SVD_K   &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &lt LLEFT TAB &kp ENTER     &kp SPACE  &lt LRIGHT BSPC
+                                     &lt LLEFT_SV TAB &kp ENTER     &kp SPACE  &lt LRIGHT_SV BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         right_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
+          &kp ARNG   &hex4      &hex5      &kp N6     &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
+          &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
+          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS    &trans    &caps_word
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &kp ESC        &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        right_layer_sv {
+            display-name = "right_sv";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
@@ -240,7 +287,7 @@
           &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-        &kp SVD_ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       &trans     &tog LFUNC &kp INS    &trans    &caps_word
+        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT    &tog LDEFAULT &tog LFUNC &kp INS    &trans    &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -248,6 +295,24 @@
         };
 
         left_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  ~       │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │  |       │
+          &kp TILDE  &kp LT     &kp DLLR   &kp GT     &trans         &trans     &kp LBKT   &kp UNDER  &kp RBKT   &kp PIPE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  =       │  (       │  "       │  )       │  '       │   │  &       │  {       │  -       │  }       │  ;       │
+          &kp EQUAL  &kp LPAR   &kp DQT    &kp RPAR   &kp SQT        &kp AMPS   &kp LBRC   &kp MINUS  &kp RBRC   &kp SEMI 
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │  +       │  *       │  :       │  #       │   │  %       │  /       │  ^       │  \       │  @       │
+          &trans     &kp PLUS   &kp STAR   &kp COLON  &kp HASH       &kp PRCNT  &kp FSLH   &kp CARET  &kp BSLH   &kp AT
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        left_layer_sv {
+            display-name = "left_sv";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ~       │  <       │  $       │  >       │          │   │          │  [       │  _       │  ]       │  |       │
