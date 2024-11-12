@@ -50,7 +50,7 @@
 #define SVD_RBKT EQUAL // ]
 
 // Row 2
-#define SVD_ARING Q   // Å
+#define SVD_ARNG Q    // Å
 #define SVD_COMM W    // ,
 #define SVD_DOT  E    // .
 #define SVD_P    R    // P
@@ -107,7 +107,7 @@
 // Row 1
 #define SVD_TILD LS(SVD_SQT)  // ~
 #define SVD_EXLM LS(SVD_1)    // !
-#define SVD_DQUO LS(SVD_2)    // "
+#define SVD_DQT  LS(SVD_2)    // "
 #define SVD_HASH LS(SVD_3)    // #
 #define SVD_CURR LS(SVD_4)    // $
 #define SVD_PERC LS(SVD_5)    // %
@@ -157,9 +157,9 @@
 #define SVD_GUILLEMOTL RA(SVD_LBKT) // « (Guillemot)
 #define SVD_GUILLEMOTR RA(SVD_RBKT) // » (Guillemot)
 // Row 2
-#define SVD_ACUT_D RA(SVD_ARING) // ◌́  (dead) (Acute)
+#define SVD_ACUT_D RA(SVD_ARNG)  // ◌́ (dead) (Acute)
 #define SVD_CCEDI RA(SVD_COMM)   // ç (C Cedilla)
-#define SVD_ADOT_D RA(SVD_DOT)   // ◌̇  (dead) (Above Dot)
+#define SVD_ADOT_D RA(SVD_DOT)   // ◌̇ (dead) (Above Dot)
 #define SVD_ODIA2 RA(SVD_P)      // ö
 #define SVD_UDIA RA(SVD_Y)       // ü
 // #define SVD_ RA(SVD_F)        // Plain F

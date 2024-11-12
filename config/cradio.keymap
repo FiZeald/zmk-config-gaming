@@ -180,7 +180,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-      &kp SVD_ARING    &hex4      &hex5      &kp N6     &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
+       &kp SVD_ARNG  &hex4_sv   &hex5_sv   &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
             &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
@@ -200,7 +200,7 @@
       &kp SVD_TILD &kp SVD_LESS &kp SVD_CURR &kp SVD_GREATER &trans &trans &kp SVD_LBKT &kp SVD_UNDER &kp SVD_RBKT &kp SVD_BAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  =       │  (       │  "       │  )       │  '       │   │  &       │  {       │  -       │  }       │  ;       │
-      &kp SVD_EQUAL &kp SVD_LPRN &kp SVD_DQUO &kp SVD_RPRN &kp SVD_SQT &kp SVD_AMPR &kp SVD_LBRC &kp SVD_MINUS &kp SVD_RBRC &kp SVD_SEMI 
+      &kp SVD_EQUAL &kp SVD_LPRN &kp SVD_DQT  &kp SVD_RPRN &kp SVD_SQT &kp SVD_AMPR &kp SVD_LBRC &kp SVD_MINUS &kp SVD_RBRC &kp SVD_SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  +       │  *       │  :       │  #       │   │  %       │  /       │  ^       │  \       │  @       │
           &trans  &kp SVD_PLUS &kp SVD_ASTR &kp SVD_COLON &kp SVD_HASH &kp SVD_PERC &kp SVD_FSLH &kp SVD_CIRC &kp SVD_BSLH &kp SVD_AT
