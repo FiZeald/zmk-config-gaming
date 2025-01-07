@@ -20,12 +20,13 @@
 #define LDEFAULT    0
 #define LDEFAULT_SV 1
 #define LRIGHT      2
-#define LRIGHT_SV   3
-#define LLEFT       4
-#define LLEFT_SV    5
-#define LFUNC       6
-#define LMGMT       7
-#define LSPECIAL    8
+#define LMOUSE      3
+#define LRIGHT_SV   4
+#define LLEFT       5
+#define LLEFT_SV    6
+#define LFUNC       7
+#define LMGMT       8
+#define LSPECIAL    9
 
 
 #define ODIA RA(P)    // ö
@@ -240,7 +241,7 @@
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
           &kp ADIA   &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M      &kp W      &kp V      &kp Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &lt LLEFT TAB &kp ENTER     &kp SPACE  &lt LRIGHT BSPC
+                                        &lt LLEFT TAB &kp ENTER    &lt LMOUSE SPACE &lt LRIGHT BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -257,7 +258,7 @@
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
          &kp SVD_ADIA &kp SVD_Q  &kp SVD_J &kp SVD_K   &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                     &lt LLEFT_SV TAB &kp ENTER     &kp SPACE  &lt LRIGHT_SV BSPC
+                                     &lt LLEFT_SV TAB &kp ENTER    &lt LMOUSE SPACE &lt LRIGHT_SV BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -275,6 +276,23 @@
           &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS    &trans    &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
+           &mkp MB4   &mkp RCLK  &mkp MCLK &mkp LCLK  &mkp MB5          &trans  &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
+          &trans     &trans     &trans     &trans     &trans      &msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
