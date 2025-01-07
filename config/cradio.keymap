@@ -14,6 +14,9 @@
 #define HRML(k1,k2,k3,k4)   &ht LGUI k1  &ht LALT k2   &ht LSHFT k3 &ht LCTRL k4
 #define HRMR(k1,k2,k3,k4)   &ht RCTRL k1 &ht RSHFT k2  &ht LALT k3  &ht RGUI k4
 
+// Layers suffixed with _SV are retranslated to allow dvorak input
+// with language set to Dvorak, enabling non-ZMK-devices to be Dvorak
+// with one global keyboard layout.
 #define LDEFAULT    0
 #define LDEFAULT_SV 1
 #define LRIGHT      2
