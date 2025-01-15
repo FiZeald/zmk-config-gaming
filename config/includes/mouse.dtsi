@@ -56,16 +56,16 @@
 };
 
 // Mouse wheel
-#define MWH_UP &msc SCRL_UP
-#define MWH_DOWN &msc SCRL_DOWN
-#define MWH_LEFT &msc SCRL_LEFT
-#define MWH_RIGHT &msc SCRL_RIGHT
+#define U_WH_U &msc SCRL_UP
+#define U_WH_D &msc SCRL_DOWN
+#define U_WH_L &msc SCRL_LEFT
+#define U_WH_R &msc SCRL_RIGHT
 
 // Mouse Movement
-#define MMV_UP &mmv MOVE_UP
-#define MMV_DOWN &mmv MOVE_DOWN
-#define MMV_LEFT &mmv MOVE_LEFT
-#define MMV_RIGHT &mmv MOVE_RIGHT
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
 
 // Mouse Click
 #define M_LCLK &mkp LCLK
