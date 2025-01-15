@@ -16,6 +16,16 @@
 // Layers suffixed with _SV are retranslated to allow dvorak input
 // with language set to Dvorak, enabling non-ZMK-devices to be Dvorak
 // with one global keyboard layout.
+// Use KEYMAP_DRAWER define to hide *_sv layers in visual representation
+#ifdef KEYMAP_DRAWER
+#define LDEFAULT    0
+#define LDEFAULT_SV 1
+#define LRIGHT      2
+#define LLEFT       3
+#define LFUNC       4
+#define LMOUSE      5
+#define LMGMT       6
+#else
 #define LDEFAULT    0
 #define LDEFAULT_SV 1
 #define LRIGHT      2
@@ -26,6 +36,13 @@
 #define LMOUSE      7
 #define LMGMT       8
 #define LSPECIAL    9
+#endif
+
+#ifdef KEYMAP_DRAWER
+    #define TOG_SV &tog LDEFAULT
+#else
+    #define TOG_SV &tog LDEFAULT_SV
+#endif
 
 #include "includes/mouse.dtsi"
 
@@ -223,10 +240,12 @@
             if-layers = <LLEFT LRIGHT>;
             then-layer = <LMGMT>;
         };
+#ifndef KEYMAP_DRAWER
         mgmt_layer_sv {
             if-layers = <LLEFT_SV LRIGHT_SV>;
             then-layer = <LMGMT>;
         };
+#endif
     };
 
     keymap {
@@ -249,6 +268,7 @@
         };
 
         sv {
+            display-name = "default_sv";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
@@ -260,7 +280,11 @@
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
          &kp SVD_ADIA &kp SVD_Q &kp SVD_J  &kp SVD_K  &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+#ifdef KEYMAP_DRAWER
+                                     &lt LLEFT TAB &kp ENTER    &lt LMOUSE SPACE &lt LRIGHT BSPC
+#else
                                      &lt LLEFT_SV TAB &kp ENTER    &lt LMOUSE SPACE &lt LRIGHT_SV BSPC
+#endif
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -275,13 +299,15 @@
           &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS  &trans     &caps_word
+          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       TOG_SV     &tog LFUNC &kp INS    &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
+
+#ifndef KEYMAP_DRAWER
         right_layer_sv {
             display-name = "right_sv";
             bindings = <
@@ -299,6 +325,7 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+#endif
 
         left_layer {
             bindings = <
@@ -317,6 +344,7 @@
             >;
         };
 
+#ifndef KEYMAP_DRAWER
         left_layer_sv {
             display-name = "left_sv";
             bindings = <
@@ -334,6 +362,7 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+#endif
 
         function_layer {
             bindings = <
@@ -386,6 +415,7 @@
             >;
         };
 
+#ifdef THIS_IS_INFO_ONLY
         special_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -402,5 +432,6 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+#endif
     };
 };

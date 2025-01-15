@@ -1,0 +1,349 @@
+draw_config:
+  separate_combo_diagrams: true
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  raw_binding_map:
+
+    "&caps_word":
+      tap: "Caps word"
+
+    # Swedish åäö
+    "&kp ADIA":
+      tap: "Ä"
+    "&kp SVD_ADIA":
+      tap: "Ä"
+    "&kp ODIA":
+      tap: "Ö"
+    "&kp SVD_ODIA":
+      tap: "Ö"
+    "&kp ARNG":
+      tap: "Å"
+    "&kp SVD_ARNG":
+      tap: "Å"
+
+    # SV layer fixes
+    "&tog LDEFAULT":
+      type: toggle
+      tap: "SV"
+      hold: "toggle"
+    
+    "&gresc_sv":
+      shifted: "`"
+      tap: "ESC"
+
+    "&sftls_sv":
+      shifted: "!"
+      tap: ","
+
+    "&sftgr_sv":
+      shifted: "?"
+      tap: "."
+
+    "&hex0_sv":
+      shifted: "A"
+      tap: 0
+    "&hex1_sv":
+      shifted: "B"
+      tap: 1
+    "&hex2_sv":
+      shifted: "C"
+      tap: 2
+    "&hex3_sv":
+      shifted: "D"
+      tap: 3
+    "&hex4_sv":
+      shifted: "E"
+      tap: 4
+    "&hex5_sv":
+      shifted: "F"
+      tap: 5
+
+    # # Left_sv top row
+    # "&kp SVD_TILD":
+    #   tap: "~"
+    # "&kp SVD_LESS":
+    #   tap: "<"
+    # "&kp SVD_CURR":
+    #   tap: "$"
+    # "&kp SVD_GREATER":
+    #   tap: ">"
+    # "&kp SVD_LBKT":
+    #   tap: "["
+    # "&kp SVD_UNDER":
+    #   tap: "_"
+    # "&kp SVD_RBKT":
+    #   tap: "]"
+    # "&kp SVD_BAR":
+    #   tap: "|"
+    # # Left_sv middle row
+    # "&kp SVD_EQUAL":
+    #   tap: "="
+    # "&kp SVD_LPRN":
+    #   tap: "("
+    # "&kp SVD_DQT":
+    #   tap: '"'
+    # "&kp SVD_RPRN":
+    #   tap: ")"
+    # "&kp SVD_SQT":
+    #   tap: "''"
+    # "&kp SVD_AMPR":
+    #   tap: "&"
+    # "&kp SVD_LBRC":
+    #   tap: "{"
+    # "&kp SVD_MINUS":
+    #   tap: "-"
+    # "&kp SVD_RBRC":
+    #   tap: "}"
+    # "&kp SVD_SEMI":
+    #   tap: ";"
+    # # Left_sv bottom row
+    # "&kp SVD_PLUS":
+    #   tap: "+"
+    # "&kp SVD_ASTR":
+    #   tap: "+"
+    # "&kp SVD_COLON":
+    #   tap: ":"
+    # "&kp SVD_HASH":
+    #   tap: "#"
+    # "&kp SVD_PERC":
+    #   tap: "%"
+    # "&kp SVD_FSLH":
+    #   tap: "/"
+    # "&kp SVD_CIRC":
+    #   tap: "^"
+    # "&kp SVD_BSLH":
+    #   tap: "\\"
+    # "&kp SVD_AT":
+    #   tap: "@"
+
+    # Mouse
+    "&mkp LCLK":
+      shifted: "Left"
+      tap: $$phosphor:bold/mouse-left-click$$
+    "&mkp MCLK":
+      shifted: "Middle"
+      tap: $$phosphor:bold/mouse-middle-click$$
+    "&mkp RCLK":
+      shifted: "Right"
+      tap: $$phosphor:bold/mouse-right-click$$
+    "&mkp MB4":
+      shifted: "MB4"
+      tap: $$phosphor:bold/mouse$$
+    "&mkp MB5":
+      shifted: "MB5"
+      tap: $$phosphor:bold/mouse$$
+
+    "&msc SCRL_UP":
+      shifted: "Up"
+      tap: $$phosphor:bold/mouse-scroll$$
+    "&msc SCRL_DOWN":
+      shifted: "Down"
+      tap: $$phosphor:bold/mouse-scroll$$
+    "&msc SCRL_LEFT":
+      shifted: "Left"
+      tap: $$phosphor:bold/mouse-scroll$$
+    "&msc SCRL_RIGHT":
+      shifted: "Right"
+      tap: $$phosphor:bold/mouse-scroll$$
+
+    "&mmv MOVE_UP":
+      shifted: $$mdi:arrow-up-bold$$
+      tap: $$phosphor:bold/mouse$$
+    "&mmv MOVE_DOWN":
+      shifted: $$mdi:arrow-down-bold$$
+      tap: $$phosphor:bold/mouse$$
+    "&mmv MOVE_LEFT":
+      shifted: $$mdi:arrow-left-bold$$
+      tap: $$phosphor:bold/mouse$$
+    "&mmv MOVE_RIGHT":
+      shifted: $$mdi:arrow-right-bold$$
+      tap: $$phosphor:bold/mouse$$
+    
+    # Bluetooth
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 1
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 2
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 3
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 4
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 5
+    "&out OUT_TOG":
+      shifted: $$mdi:usb$$
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+    "&rst_boot 0 0":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+      hold: $$mdi:progress-download$$
+    
+  sticky_label: sticky
+  toggle_label: toggle
+  tap_toggle_label: tap-toggle
+  trans_legend:
+    t: ▽
+    type: trans
+  mark_alternate_layer_activators: true
+  modifier_fn_map:
+    left_ctrl: ^
+    right_ctrl: ^
+    left_shift: "Sft"
+    right_shift: "Sft"
+    left_alt: Alt
+    right_alt: AGr
+    left_gui: Gui
+    right_gui: Gui
+    keycode_combiner: '{mods}+ {key}'
+    mod_combiner: '{mod_1}+{mod_2}'
+    special_combinations:
+      left_ctrl+left_alt+left_gui+left_shift: Hyper
+      left_ctrl+left_alt+left_shift: Meh
+  zmk_remove_keycode_prefix: []
+  zmk_keycode_map:
+    EXCLAMATION: '!'
+    EXCL: '!'
+    AT_SIGN: '@'
+    AT: '@'
+    HASH: '#'
+    POUND: '#'
+    DOLLAR: $
+    DLLR: $
+    PERCENT: '%'
+    PRCNT: '%'
+    CARET: ^
+    AMPERSAND: '&'
+    AMPS: '&'
+    ASTERISK: '*'
+    ASTRK: '*'
+    STAR: '*'
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL: '='
+    PLUS: +
+    MINUS: '-'
+    UNDERSCORE: _
+    UNDER: _
+    SLASH: /
+    FSLH: /
+    QUESTION: '?'
+    QMARK: '?'
+    BACKSLASH: \
+    BSLH: \
+    PIPE: '|'
+    NON_US_BACKSLASH: \
+    PIPE2: '|'
+    NON_US_BSLH: '|'
+    SEMICOLON: ;
+    SEMI: ;
+    COLON: ':'
+    SINGLE_QUOTE: ''''
+    SQT: ''''
+    APOSTROPHE: ''''
+    APOS: ''''
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    CMMA: ','
+    COMMA: ','
+    LESS_THAN: <
+    LT: <
+    PERIOD: .
+    DOT: .
+    GREATER_THAN: '>'
+    GT: '>'
+    LEFT_BRACKET: '['
+    LBKT: '['
+    LEFT_BRACE: '{'
+    LBRC: '{'
+    RIGHT_BRACKET: ']'
+    RBKT: ']'
+    RIGHT_BRACE: '}'
+    RBRC: '}'
+    GRAVE: '`'
+    TILDE: '~'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    TILDE2: '~'
+
+     # Modifiers
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: "Alt"
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: "AltGr"
+    RSHIFT: $$mdi:apple-keyboard-shift$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    LS(LC(LALT)): $$mdi:triangle$$ # Meh
+
+     # Arrows
+    UP: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
+    LEFT: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
+    PG_UP: $$mdi:transfer-up$$
+    PG_DN: $$mdi:transfer-down$$
+
+    ODIA: 'ö'
+    ADIA: 'ä'
+    ARNG: 'å'
+
+    # Bluetooth
+    BT_CLR: $$mdi:bluetooth-off$$
+    BT_SEL: $$mdi:bluetooth-connect$$
+
+    # Settings
+    C_BRI_UP: $$mdi:brightness-5$$
+    C_BRI_DN: $$mdi:brightness-7$$
+
+     # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+
+    # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+
+     # Whitespace
+    ENTER:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    # ESC: $$mdi:keyboard-esc$$
+    TAB: $$mdi:keyboard-tab$$
+    LS(TAB): $$mdi:keyboard-tab-reverse$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE:
+      type: backspace
+      tap: $$mdi:backspace$$
+    BSPC:
+      type: backspace
+      tap: $$mdi:backspace$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+  zmk_combos: {}
+  zmk_preamble: '#define KEYMAP_DRAWER'
+  zmk_additional_includes: []
