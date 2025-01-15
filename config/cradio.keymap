@@ -46,8 +46,6 @@
 
 #include "includes/mouse.dtsi"
 
-#include <dt-bindings/zmk/pointing.h>
-
 #define ODIA RA(P)    // ö
 #define ADIA RA(Q)    // ä
 #define ARNG RA(W)    // å
