@@ -45,3 +45,19 @@
         input-processors = <&zip_scroll_scaler 3 1>;
     };
 };
+
+#define M_WH_UP &msc SCRL_UP
+#define M_WH_DOWN &msc SCRL_DOWN
+#define M_WH_LEFT &msc SCRL_LEFT
+#define M_WH_RIGHT &msc SCRL_RIGHT
+
+#define M_UP &mmv MOVE_UP
+#define M_DOWN &mmv MOVE_DOWN
+#define M_LEFT &mmv MOVE_LEFT
+#define M_RIGHT &mmv MOVE_RIGHT
+
+#define M_LCLK &mkp LCLK
+#define M_MCLK &mkp MCLK
+#define M_RCLK &mkp RCLK
+#define M_MB4 &mkp MB4
+#define M_MB5 &mkp MB5

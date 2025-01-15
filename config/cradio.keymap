@@ -68,26 +68,26 @@
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
         // Make LS(,) RS(,) output ! instead of <
-        shiftless: shiftless {
+        sftls: sftls {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CMMA>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        shiftless_sv: shiftless_sv {
+        sftls_sv: sftls_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SVD_COMM>, <&kp SVD_EXLM>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Make LS(,) RS(,) output ? instead of >
-        shiftgreater: shiftgreater {
+        sftgr: sftgr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        shiftgreater_sv: shiftgreater_sv {
+        sftgr_sv: sftgr_sv {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SVD_DOT>, <&kp SVD_QMARK>;
@@ -182,38 +182,38 @@
         combo_lclk {
             timeout-ms = <50>;
             key-positions = <3 13>;
-            bindings = <&mkp LCLK>;
+            bindings = <M_LCLK>;
         };
         // Pressing both . and E gives MCLK
         combo_mclk {
             timeout-ms = <50>;
             key-positions = <2 12>;
-            bindings = <&mkp MCLK>;
+            bindings = <M_MCLK>;
         };
         // Pressing both , and O gives RCLK
         combo_rclk {
             timeout-ms = <50>;
             key-positions = <1 11>;
-            bindings = <&mkp RCLK>;
+            bindings = <M_RCLK>;
         };
         // Right hand mouse
         // Pressing both G and H gives LCLK
         combo_lclk_r {
             timeout-ms = <50>;
             key-positions = <6 16>;
-            bindings = <&mkp LCLK>;
+            bindings = <M_LCLK>;
         };
         // Pressing both C and T gives MCLK
         combo_mclk_r {
             timeout-ms = <50>;
             key-positions = <7 17>;
-            bindings = <&mkp MCLK>;
+            bindings = <M_MCLK>;
         };
         // Pressing both R and N gives RCLK
         combo_rclk_r {
             timeout-ms = <50>;
             key-positions = <8 18>;
-            bindings = <&mkp RCLK>;
+            bindings = <M_RCLK>;
         };
     };
 
@@ -235,10 +235,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
-           &gresc &shiftless &shiftgreater &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
+          &gresc     &sftls     &sftgr     &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
-          HRML(  A,      O,         E,         U)     &kp I          &kp D      HRMR( H,       T,         N,         S)
+          HRML( A,      O,         E,         U)      &kp I          &kp D      HRMR( H,      T,         N,         S)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
           &kp ADIA   &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M      &kp W      &kp V      &kp Z
@@ -252,13 +252,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC `    │  ,       │  .       │  P       │  Y       │   │  F       │  G       │  C       │  R       │  L       │
-           &gresc_sv &shiftless_sv &shiftgreater_sv &kp SVD_P &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
+          &gresc_sv  &sftls_sv  &sftgr_sv  &kp SVD_P  &kp SVD_Y      &kp SVD_F  &kp SVD_G  &kp SVD_C  &kp SVD_R  &kp SVD_L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
-           HRML(SVD_A, SVD_O,     SVD_E,     SVD_U)    &kp SVD_I      &kp SVD_D  HRMR(SVD_H, SVD_T,     SVD_N,     SVD_S)
+           HRML(SVD_A, SVD_O,     SVD_E,     SVD_U)   &kp SVD_I      &kp SVD_D  HRMR(SVD_H,  SVD_T,     SVD_N,     SVD_S)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ä       │  Q       │  J       │  K       │  X       │   │  B       │  M       │  W       │  V       │  Z       │
-         &kp SVD_ADIA &kp SVD_Q  &kp SVD_J &kp SVD_K   &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
+         &kp SVD_ADIA &kp SVD_Q &kp SVD_J  &kp SVD_K  &kp SVD_X      &kp SVD_B  &kp SVD_M  &kp SVD_W  &kp SVD_V  &kp SVD_Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                      &lt LLEFT_SV TAB &kp ENTER    &lt LMOUSE SPACE &lt LRIGHT_SV BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -269,15 +269,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-          &kp ARNG   &hex4      &hex5      &kp N6     &trans         &trans   &kp PG_UP    &kp UP   &kp PG_DN    &trans
+          &kp ARNG   &hex4      &hex5      &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-          &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME  &kp LEFT    &kp DOWN   &kp RIGHT  &kp END
+          &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS    &trans    &caps_word
+          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS  &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
+                                           &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -287,15 +287,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-       &kp SVD_ARNG  &hex4_sv   &hex5_sv   &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN    &trans
+        &kp SVD_ARNG &hex4_sv   &hex5_sv   &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
           &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS    &trans    &caps_word
+        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS  &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
+                                           &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -312,7 +312,7 @@
         //│          │  +       │  *       │  :       │  #       │   │  %       │  /       │  ^       │  \       │  @       │
           &trans     &kp PLUS   &kp STAR   &kp COLON  &kp HASH       &kp PRCNT  &kp FSLH   &kp CARET  &kp BSLH   &kp AT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -330,7 +330,7 @@
         //│          │  +       │  *       │  :       │  #       │   │  %       │  /       │  ^       │  \       │  @       │
           &trans  &kp SVD_PLUS &kp SVD_ASTR &kp SVD_COLON &kp SVD_HASH &kp SVD_PERC &kp SVD_FSLH &kp SVD_CIRC &kp SVD_BSLH &kp SVD_AT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -339,15 +339,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │   F4     │  F5      │  F6      │ F11      │   │          │ BL-      │ Vol Up   │ BL+      │          │
-            &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp LGUI
+          &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp LGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  F10     │   F1     │  F2      │  F3      │ F12      │   │          │  C_Prev  │ Vol Down │ C_Next   │  CTRL    │
-             &kp F10   &kp F1     &kp F2     &kp F3     &kp F12         &trans   HRMR(C_PREV, C_VOL_DN, C_NEXT,     LCTRL)
+          &kp F10    &kp F1     &kp F2     &kp F3     &kp F12        &trans   HRMR(C_PREV, C_VOL_DN,  C_NEXT,    LCTRL)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │ F7       │ F8       │ F9       │          │   │          │ Toggle F │Play/Pause│  Mute    │  Alt     │
-             &trans    &kp F7     &kp F8     &kp F9     &trans          &trans     &tog LFUNC  &kp C_PP  &kp C_MUTE &kp LALT
+          &trans     &kp F7     &kp F8     &kp F9     &trans         &trans     &tog LFUNC &kp C_PP   &kp C_MUTE &kp LALT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -356,10 +356,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
-           &mkp MB4   &mkp RCLK  &mkp MCLK &mkp LCLK  &mkp MB5          &trans  &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN &trans
+          M_MB4      M_RCLK     M_MCLK     M_LCLK     M_MB5          &trans     M_WH_UP    M_UP       M_WH_DOWN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
-          &trans     &trans     &trans     &trans     &trans      &msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT
+          &trans     &trans     &trans     &trans     &trans         M_WH_LEFT  M_LEFT     M_DOWN     M_RIGHT    M_WH_RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
           &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
@@ -372,16 +372,16 @@
         mgmt_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │BOOTLOADER│          │PROFILE 3 │PROFILE 0 │   │          │          │          │BOOTLOADER│  RESET   │
-           &sys_reset &bootloader &trans &bt BT_SEL 3  &bt BT_SEL 0    &trans     &trans     &trans   &bootloader &sys_reset
+        //│ RESET    │BOOTLOADER│          │PROFILE 3 │PROFILE 0 │   │          │          │          │BOOTLOADER│ RESET    │
+          &sys_reset &bootloader &trans &bt BT_SEL 3  &bt BT_SEL 0   &trans     &trans     &trans    &bootloader &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │PROFILE 4 │PROFILE 1 │   │          │ DELETE   │          │          │          │
-           &trans      &trans     &trans &bt BT_SEL 4  &bt BT_SEL 1    &trans     &kp DEL    &trans     &trans    &trans
+          &trans     &trans     &trans &bt BT_SEL 4   &bt BT_SEL 1   &trans     &kp DEL    &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │ BT/USB   │ EXT_PWR  │          │          │          │
-            &bt BT_CLR &trans     &trans    &trans     &bt BT_SEL 2    &out OUT_TOG &ext_power EP_TOG &trans &trans &trans
+          &bt BT_CLR &trans     &trans     &trans     &bt BT_SEL 2  &out OUT_TOG &ext_power EP_TOG &trans &trans &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -389,16 +389,16 @@
         special_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ´ (Dead) │ ç        │ ˙ (Dead) │ ¨ (Dead) │ ü        │   │ «        │ »        │ ©        │ ®        │  ø       │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
+        //│ ´ (Dead) │ ç        │ ˙ (Dead) │ ö        │ ü        │   │          │          │ ©        │ ®        │ ø        │
+          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ á        │ ó        │ é        │ ú        │ í        │   │ ð        │ `        │ þ        │ ñ        │  ß       │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
+        //│ á        │ ó        │ é        │ ú        │ í        │   │ ð        │          │ þ        │ ñ        │ ß        │
+          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ` (Dead) │ ½        │ ¾        │ œ        │  ◌̂       │   │ ¤        │ µ        │ ‘        │ ’        │  æ       │
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans      &trans
+        //│ ` (Dead) │ ä        │          │ œ        │          │   │          │ µ        │ å        │          │ æ        │
+          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
