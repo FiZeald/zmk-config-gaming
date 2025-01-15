@@ -7,10 +7,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include "includes/mouse.dtsi"
-
-#include <dt-bindings/zmk/pointing.h>
-
 #include "includes/se_dvorak_keys.h"
 
 // Home row mods macro (GASC)
@@ -31,6 +27,9 @@
 #define LMGMT       8
 #define LSPECIAL    9
 
+#include "includes/mouse.dtsi"
+
+#include <dt-bindings/zmk/pointing.h>
 
 #define ODIA RA(P)    // ö
 #define ADIA RA(Q)    // ä
