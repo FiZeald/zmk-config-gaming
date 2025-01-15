@@ -22,7 +22,7 @@ layers:
   - {t: N, h: Alt}
   - {t: S, h: RGUI}
   - Ä
-  - Å
+  - Q
   - J
   - K
   - X
@@ -30,7 +30,7 @@ layers:
   - M
   - W
   - V
-  - Ä
+  - Z
   - {t: '$$mdi:keyboard-tab$$', h: left}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-space$$', h: mouse}
@@ -56,7 +56,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: L, h: Alt}
   - {t: ;, h: RGUI}
-  - Ä
+  - Z
   - X
   - C
   - V
@@ -99,7 +99,7 @@ layers:
   - {t: SV, h: toggle, type: toggle}
   - {t: function, h: toggle}
   - INS
-  - {t: ▽, type: trans}
+  - CMENU
   - Caps word
   - {t: ▽, type: trans}
   - ESC
