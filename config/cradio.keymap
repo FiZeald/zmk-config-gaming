@@ -385,10 +385,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
-          M_MB4      M_RCLK     M_MCLK     M_LCLK     M_MB5          &trans     M_WH_UP    M_UP       M_WH_DOWN  &trans
+          M_MB4      M_RCLK     M_MCLK     M_LCLK     M_MB5          &trans     MWH_UP     MMV_UP     MWH_DOWN   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
-          &trans     &trans     &trans     &trans     &trans         M_WH_LEFT  M_LEFT     M_DOWN     M_RIGHT    M_WH_RIGHT
+          &trans     &trans     &trans     &trans     &trans         MWH_LEFT   MMV_LEFT   MMV_DOWN   MMV_RIGHT  MWH_RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
           &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans

@@ -25,6 +25,10 @@
         layers = <LLEFT>;
         input-processors = <&zip_xy_scaler 1 4>;
     };
+    precision_sv {
+        layers = <LLEFT_SV>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
 };
 
 / {
@@ -44,18 +48,26 @@
         layers = <LLEFT>;
         input-processors = <&zip_scroll_scaler 3 1>;
     };
+    turbo_sv {
+        layers = <LLEFT_SV>;
+        input-processors = <&zip_scroll_scaler 3 1>;
+    };
+
 };
 
-#define M_WH_UP &msc SCRL_UP
-#define M_WH_DOWN &msc SCRL_DOWN
-#define M_WH_LEFT &msc SCRL_LEFT
-#define M_WH_RIGHT &msc SCRL_RIGHT
+// Mouse wheel
+#define MWH_UP &msc SCRL_UP
+#define MWH_DOWN &msc SCRL_DOWN
+#define MWH_LEFT &msc SCRL_LEFT
+#define MWH_RIGHT &msc SCRL_RIGHT
 
-#define M_UP &mmv MOVE_UP
-#define M_DOWN &mmv MOVE_DOWN
-#define M_LEFT &mmv MOVE_LEFT
-#define M_RIGHT &mmv MOVE_RIGHT
+// Mouse Movement
+#define MMV_UP &mmv MOVE_UP
+#define MMV_DOWN &mmv MOVE_DOWN
+#define MMV_LEFT &mmv MOVE_LEFT
+#define MMV_RIGHT &mmv MOVE_RIGHT
 
+// Mouse Click
 #define M_LCLK &mkp LCLK
 #define M_MCLK &mkp MCLK
 #define M_RCLK &mkp RCLK
