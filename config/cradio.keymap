@@ -21,11 +21,11 @@
 #define LDEFAULT    0
 #define LDEFAULT_SV 1
 #define LRIGHT      2
-#define LMOUSE      3
-#define LRIGHT_SV   4
-#define LLEFT       5
-#define LLEFT_SV    6
-#define LFUNC       7
+#define LRIGHT_SV   3
+#define LLEFT       4
+#define LLEFT_SV    5
+#define LFUNC       6
+#define LMOUSE      7
 #define LMGMT       8
 #define LSPECIAL    9
 
@@ -281,23 +281,6 @@
             >;
         };
 
-        mouse_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
-           &mkp MB4   &mkp RCLK  &mkp MCLK &mkp LCLK  &mkp MB5          &trans  &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
-          &trans     &trans     &trans     &trans     &trans      &msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         right_layer_sv {
             display-name = "right_sv";
             bindings = <
@@ -364,6 +347,23 @@
              &trans    &kp F7     &kp F8     &kp F9     &trans          &trans     &tog LFUNC  &kp C_PP  &kp C_MUTE &kp LALT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
+           &mkp MB4   &mkp RCLK  &mkp MCLK &mkp LCLK  &mkp MB5          &trans  &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
+          &trans     &trans     &trans     &trans     &trans      &msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │   │          │          │          │          │          │
+          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                           &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
