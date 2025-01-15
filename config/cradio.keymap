@@ -7,9 +7,11 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#include "includes/mouse.dtsi"
+
 #include <dt-bindings/zmk/pointing.h>
 
-#include "se_dvorak_keys.h"
+#include "includes/se_dvorak_keys.h"
 
 // Home row mods macro (GASC)
 #define HRML(k1,k2,k3,k4)   &ht LGUI k1  &ht LALT k2   &ht LSHFT k3 &ht LCTRL k4
