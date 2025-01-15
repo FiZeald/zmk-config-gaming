@@ -7,9 +7,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1250 // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100  // default: 10
-
 #include <dt-bindings/zmk/pointing.h>
 
 #include "se_dvorak_keys.h"
