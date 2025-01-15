@@ -298,8 +298,8 @@
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
           &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       TOG_SV     &tog LFUNC &kp INS    &trans     &caps_word
+        //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │ K_CMENU  │ CAPS_WORD│
+          &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       TOG_SV     &tog LFUNC &kp INS   &kp K_CMENU &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
