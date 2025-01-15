@@ -11,16 +11,16 @@ parse_config:
     # Swedish åäö
     "&kp ADIA":
       tap: "Ä"
-    "&kp SVD_ADIA":
-      tap: "Ä"
     "&kp ODIA":
-      tap: "Ö"
-    "&kp SVD_ODIA":
       tap: "Ö"
     "&kp ARNG":
       tap: "Å"
-    "&kp SVD_ARNG":
-      tap: "Å"
+    # "&kp SVD_ADIA":
+    #   tap: "Ä"
+    # "&kp SVD_ODIA":
+    #   tap: "Ö"
+    # "&kp SVD_ARNG":
+    #   tap: "Å"
 
     # SV layer fixes
     "&tog LDEFAULT":
@@ -40,24 +40,24 @@ parse_config:
       shifted: "?"
       tap: "."
 
-    "&hex0_sv":
-      shifted: "A"
-      tap: 0
-    "&hex1_sv":
-      shifted: "B"
-      tap: 1
-    "&hex2_sv":
-      shifted: "C"
-      tap: 2
-    "&hex3_sv":
-      shifted: "D"
-      tap: 3
-    "&hex4_sv":
-      shifted: "E"
-      tap: 4
-    "&hex5_sv":
-      shifted: "F"
-      tap: 5
+    # "&hex0_sv":
+    #   shifted: "A"
+    #   tap: 0
+    # "&hex1_sv":
+    #   shifted: "B"
+    #   tap: 1
+    # "&hex2_sv":
+    #   shifted: "C"
+    #   tap: 2
+    # "&hex3_sv":
+    #   shifted: "D"
+    #   tap: 3
+    # "&hex4_sv":
+    #   shifted: "E"
+    #   tap: 4
+    # "&hex5_sv":
+    #   shifted: "F"
+    #   tap: 5
 
     # # Left_sv top row
     # "&kp SVD_TILD":
