@@ -50,6 +50,11 @@
 #define ADIA RA(Q)    // ä
 #define ARNG RA(W)    // å
 
+// $mod+$modthree+key used in Sway for warpd jumps
+#define MS_G LG(LS(G))
+#define MS_C LG(LS(C))
+#define MS_R LG(LS(R))
+
 // Letters that gets translated to some non-alphabet key breaks caps word,
 // ABCDEFGHIJKLMNOPQRsTvwXYzÅÄö
 // Adding special handling for s, v, w, z and ö
@@ -389,8 +394,8 @@
           &trans     &trans     &trans     &trans     &trans         U_WH_L     U_MS_L     U_MS_D     U_MS_R     U_WH_R
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-          &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+          &trans     &trans     &trans     &trans     &trans         &trans     &kp MS_G   &kp MS_C   &kp MS_R   &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴─────────
                                            &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
