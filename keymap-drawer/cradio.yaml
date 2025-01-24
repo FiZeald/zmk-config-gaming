@@ -150,7 +150,7 @@ layers:
   - $$mdi:brightness-7$$
   - $$mdi:volume-high$$
   - $$mdi:brightness-5$$
-  - LGUI
+  - $$mdi:backspace-reverse-outline$$
   - F10
   - F1
   - F2
