@@ -26,11 +26,17 @@
     * left hand: Same as numpad, but the F-keys
     * right hand: Brightness, media control and volume
 
-6. `mouse` layer
+6. `Gaming QWER` layer
+    * left hand: Gaming layer made for League of Legends
+      
+7. `Gaming WASD` layer
+    * left hand: Gaming layer made for FPS and various games movement used by W A S D
+      
+8. `mouse` layer
     * left hand: Mouse button, home-row modifiers available too
     * right hand: Scroll and movement
   
-7. `mgmt` layer
+9. `mgmt` layer
     Handling of Bluetooth profiles, bootloader, reset etc. 
 
 ## Keyboard
