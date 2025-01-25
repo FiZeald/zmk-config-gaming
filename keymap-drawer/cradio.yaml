@@ -75,7 +75,7 @@ layers:
   - {t: '4', s: E}
   - {t: '5', s: F}
   - '6'
-  - {t: ▽, type: trans}
+  - {t: gaming_layerWASD, h: toggle}
   - {t: ▽, type: trans}
   - $$mdi:transfer-up$$
   - $$mdi:arrow-up-bold$$
@@ -85,7 +85,7 @@ layers:
   - {t: '1', s: B}
   - {t: '2', s: C}
   - {t: '3', s: D}
-  - {t: ▽, type: trans}
+  - {t: gaming_layerQWER, h: toggle}
   - HOME
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
@@ -175,6 +175,76 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  gaming_layerWASD:
+  - ESC
+  - '1'
+  - '2'
+  - R
+  - V
+  - F
+  - G
+  - C
+  - R
+  - L
+  - $$mdi:apple-keyboard-shift$$
+  - A
+  - W
+  - D
+  - C
+  - D
+  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: N, h: Alt}
+  - {t: S, h: RGUI}
+  - $$mdi:apple-keyboard-control$$
+  - Q
+  - S
+  - E
+  - $$mdi:keyboard-tab$$
+  - B
+  - M
+  - W
+  - V
+  - Z
+  - $$mdi:keyboard-space$$
+  - F
+  - {t: default, h: toggle}
+  - {t: '$$mdi:backspace$$', h: right}
+  gaming_layerQWER:
+  - ESC
+  - '1'
+  - '2'
+  - '3'
+  - Y
+  - F
+  - G
+  - C
+  - R
+  - L
+  - $$mdi:apple-keyboard-shift$$
+  - Q
+  - W
+  - E
+  - R
+  - D
+  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: N, h: Alt}
+  - {t: S, h: RGUI}
+  - $$mdi:keyboard-tab$$
+  - C
+  - S
+  - G
+  - F
+  - B
+  - M
+  - W
+  - V
+  - Z
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: default, h: toggle}
+  - {t: '$$mdi:backspace$$', h: right}
   mouse:
   - {t: '$$phosphor:bold/mouse$$', s: MB4}
   - {t: '$$phosphor:bold/mouse-right-click$$', s: Right}
