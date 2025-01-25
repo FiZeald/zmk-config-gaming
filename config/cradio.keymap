@@ -1,3 +1,4 @@
+
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
@@ -23,8 +24,11 @@
 #define LRIGHT      2
 #define LLEFT       3
 #define LFUNC       4
-#define LMOUSE      5
-#define LMGMT       6
+#define LGQWER      5
+#define LGWASD      6
+#define LMOUSE      7
+#define LMGMT       8
+
 #else
 #define LDEFAULT    0
 #define LDEFAULT_SV 1
@@ -33,11 +37,14 @@
 #define LLEFT       4
 #define LLEFT_SV    5
 #define LFUNC       6
-#define LMOUSE      7
-#define LMGMT       8
-#define LSPECIAL    9
-#endif
+#define LGQWER      7
+#define LGWASD      8
+#define LMOUSE      9
+#define LMGMT       10
+#define LSPECIAL    11
 
+#endif
+//LGWASD + LGQWER gaming layers added 
 #ifdef KEYMAP_DRAWER
     #define TOG_SV &tog LDEFAULT
 #else
@@ -295,11 +302,11 @@
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-          &kp ARNG   &hex4      &hex5      &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN  &trans
+        //│ Å        │  4  E    │  5  F    │  6       │GamingQWER│   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
+          &kp ARNG   &hex4      &hex5      &kp N6     &to LGQWER     &trans     &kp PG_UP  &kp UP     &kp PG_DN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-          &hex0      &hex1      &hex2      &hex3      &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
+        //│  0  A    │  1  B    │  2  C    │  3  D    │GamingWASD│   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
+          &hex0      &hex1      &hex2      &hex3      &to LGWASD     &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │ K_CMENU  │ CAPS_WORD│
           &kp ODIA   &kp N7     &kp N8     &kp N9     &sk RALT       TOG_SV     &tog LFUNC &kp INS   &kp K_CMENU &caps_word
@@ -316,13 +323,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Å        │  4  E    │  5  F    │  6       │          │   │          │ PAGE UP  │ UP       │ PAGE_DN  │          │
-        &kp SVD_ARNG &hex4_sv   &hex5_sv   &kp N6     &trans         &trans     &kp PG_UP  &kp UP     &kp PG_DN  &trans
+        &kp SVD_ARNG &hex4_sv   &hex5_sv   &kp N6     &to LGWASD     &kp PG_UP  &kp UP     &kp PG_DN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0  A    │  1  B    │  2  C    │  3  D    │          │   │ HOME     │ LEFT     │ DOWN     │ RIGHT    │ END      │
-          &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &trans         &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
+          &hex0_sv   &hex1_sv   &hex2_sv   &hex3_sv   &to LGQWER     &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ö       │  7       │  8       │  9       │  Mod5    │   │          │ Toggle F │ INSERT   │          │ CAPS_WORD│
-        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT   &tog LDEFAULT_SV &tog LFUNC &kp INS  &trans     &caps_word
+        &kp SVD_ODIA &kp N7     &kp N8     &kp N9     &sk RALT    &tog LDEFAULT_SV &tog LFUNC &kp INS &trans     &caps_word
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -369,38 +376,52 @@
 
         function_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │   F4     │  F5      │  F6      │ F11      │   │          │ BL-      │ Vol Up   │ BL+      │ DEL      │
-          &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans  &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp DEL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  F10     │   F1     │  F2      │  F3      │ F12      │   │          │  C_Prev  │ Vol Down │ C_Next   │  CTRL    │
-          &kp F10    &kp F1     &kp F2     &kp F3     &kp F12        &trans   HRMR(C_PREV, C_VOL_DN,  C_NEXT,    LCTRL)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │ F7       │ F8       │ F9       │          │   │          │ Toggle F │Play/Pause│  Mute    │  Alt     │
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭───────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ INSERT   │   F4     │   F5     │   F6     │   F11    │   │           │ BL-      │ Vol Up   │ BL+      │ DEL      │
+          &kp INS    &kp F4     &kp F5     &kp F6     &kp F11        &trans   &kp C_BRI_DN &kp C_VOL_UP &kp C_BRI_UP &kp DEL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+        //│   F10    │   F1     │   F2     │   F3     │   F12    │   │           │  C_Prev  │ Vol Down │ C_Next   │  CTRL    │
+          &kp F10    &kp F1     &kp F2     &kp F3     &kp F12        &trans      HRMR(C_PREV, C_VOL_DN,  C_NEXT,    LCTRL)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │   F7     │   F8     │   F9     │          │   │           │ Toggle F │Play/Pause│  Mute    │  Alt     │
           &trans     &kp F7     &kp F8     &kp F9     &trans         &trans     &tog LFUNC &kp C_PP   &kp C_MUTE &kp LALT
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┴──────────┴──────────╯
+                                           &trans     &trans         &trans      &trans
+        //                                 ╰──────────┴──────────╯   ╰───────────┴──────────╯
             >;
         };
-
-        mouse_layer {
+        gaming_layerWASD {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │ SCRL_UP  │ MMV_UP   │ SCRL_DN  │          │
-          M_MB4      M_RCLK     M_MCLK     M_LCLK     M_MB5          &trans     U_WH_U     U_MS_U     U_WH_D     &trans
+        //│   ESC    │   1      │   2      │   R      │   V      │   │   F      │   G      │   C      │   R      │   L      │
+          &kp ESC    &kp 1      &kp 2      &kp R      &kp V          &kp F      &kp G      &kp C      &kp R      &kp L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ SCRL_LEFT│ MMV_LEFT │ MMV_DOWN │ MMV_RIGHT│SCRL_RIGHT│
-          &trans     &trans     &trans     &trans     &trans         U_WH_L     U_MS_L     U_MS_D     U_MS_R     U_WH_R
+        //│   LSHIFT │   A      │   W      │   D      │   C      │   │   D      │     H    │   T      │   N      │   S      │
+          &kp LSHIFT &kp A      &kp W      &kp D      &kp C          &kp D      HRMR( H,       T,         N,         S)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-          &trans     &trans     &trans     &trans     &trans         &trans     &kp MS_G   &kp MS_C   &kp MS_R   &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴─────────
-                                           &trans     &trans         &trans     &trans
+        //│   LCtrl  │   Q      │   S      │   E      │   Tab    │   │   B      │   M      │   W      │   V      │   Z      │
+          &kp LCTRL  &kp Q      &kp S      &kp E      &kp TAB        &kp B      &kp M      &kp W      &kp V      &kp Z
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                           &kp SPACE  &kp F          &to LDEFAULT &lt LRIGHT BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-
+        gaming_layerQWER {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│   ESC    │   1      │   2      │   3      │   Y      │   │   F      │   G      │   C      │   R      │   L      │
+          &kp ESC    &kp 1      &kp 2      &kp 3      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //    LShift │   Q      │   W      │   E      │   R      │   │   D      │     H    │   T      │   N      │   S      │
+          &kp LSHIFT &kp Q      &kp W      &kp E      &kp R          &kp D      HRMR( H,       T,         N,         S)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│   TAB    │   C      │   S      │   G      │   F      │   │   B      │   M      │   W      │   V      │   Z      │
+          &kp TAB    &kp C      &kp S      &kp G      &kp F          &kp B      &kp M      &kp W      &kp V      &kp Z
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                           &kp SPACE  &kp ENTER      &to LDEFAULT &lt LRIGHT BSPC
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
         mgmt_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -411,7 +432,7 @@
           &trans     &trans     &trans &bt BT_SEL 4   &bt BT_SEL 1   &trans     &kp DEL    &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │ BT/USB   │ EXT_PWR  │          │          │          │
-          &bt BT_CLR &trans     &trans     &trans     &bt BT_SEL 2  &out OUT_TOG &ext_power EP_TOG &trans &trans &trans
+          &bt BT_CLR &trans     &trans     &trans     &bt BT_SEL 2  &out OUT_TOG &ext_power EP_TOG    &trans &trans &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
